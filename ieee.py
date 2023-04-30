@@ -49,7 +49,7 @@ table_style = """
 """
 
 # Sidebar - SB name search
-search_name = st.sidebar.text_input('Enter Student Branch to search')
+search_name = st.text_input('Enter Student Branch to search')
 
 # Filter the data based on the search query
 filtered_df = df[df[column_names[0]].str.contains(search_name, case=False)]
@@ -78,7 +78,7 @@ if not filtered_df.empty:
 
     if(len(sb_values)>len(columns_to_aggregate)):
     # Bar plot for specific SB values
-        st.subheader("Specific SB Values")
+        st.subheader("The Membership growth")
         plt.bar(columns_to_aggregate, aggregate_values)
         plt.xticks(rotation=45)
         plt.xlabel("Month")
@@ -86,7 +86,7 @@ if not filtered_df.empty:
         st.pyplot()
     else:
         # Bar plot for specific SB values
-        st.subheader("Specific SB Values")
+        st.subheader("The Membership growth")
         plt.bar(columns_to_aggregate, sb_values)
         plt.xticks(rotation=45)
         plt.xlabel("Month")
@@ -97,7 +97,7 @@ if not filtered_df.empty:
     if(len(sb_values)>len(columns_to_aggregate)):
         # Line plot for aggregate values of specified SB
         
-        st.subheader("Aggregate Values")
+        st.subheader("Growth in past 3 months")
         plt.plot(columns_to_aggregate, aggregate_values)
         plt.xticks(rotation=45)
         plt.xlabel("Month")
@@ -105,7 +105,7 @@ if not filtered_df.empty:
         st.pyplot()
     else:
         # Line plot for aggregate values of specified SB
-        st.subheader("Aggregate Values")
+        st.subheader("Growth in past 3 months")
         plt.plot(columns_to_aggregate, sb_values)
         plt.xticks(rotation=45)
         plt.xlabel("Month")
