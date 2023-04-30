@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import streamlit.components.v1 as components
 
 # Load the Excel file
-excel_file = '/home/user/python files/IEEE/Student Branch and Member count.xlsx'
+excel_file = 'Student Branch and Member count.xlsx'
 df = pd.read_excel(excel_file)
 
 # Get the column names
