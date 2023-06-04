@@ -1,6 +1,5 @@
 import streamlit as st
 import openai
-openai.api_key = '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'
 
 def plan_event(user_input):
     chat_history = []

@@ -7,17 +7,17 @@ import base64
 from PIL import Image
 import requests
 
-def validate_member(email):
-    url = f"https://services20.ieee.org/bin/svc/ieee-webapps/membership-validator.validate-member.json?emailAddress={email}"
-    response = requests.get(url)
-    return response.json()
+# def validate_member(email):
+#     url = f"https://services20.ieee.org/bin/svc/ieee-webapps/membership-validator.validate-member.json?emailAddress={email}"
+#     response = requests.get(url)
+#     return response.json()
 
-st.title("IEEE Membership Validator")
+# st.title("IEEE Membership Validator")
 
-email = st.text_input("Enter your email address:")
-if st.button("Validate"):
-    response = validate_member(email)
-    st.write(response)
+# email = st.text_input("Enter your email address:")
+# if st.button("Validate"):
+#     response = validate_member(email)
+#     st.write(response)
 
 # Load the Excel file
 excel_file = 'Student Branch and Member count.xlsx'
@@ -28,7 +28,7 @@ column_names = df.columns.tolist()
 column_names[0] = 'Student Branch'
 
 # Specify the columns to aggregate
-columns_to_aggregate = ['Feb', 'Mar', 'Apr']
+columns_to_aggregate = ['Feb', 'Mar', 'Apr','May']
 
 # Aggregate values for specified columns
 aggregate_values = df[columns_to_aggregate].sum()
