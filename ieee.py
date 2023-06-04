@@ -5,7 +5,6 @@ import streamlit.components.v1 as components
 import io
 import base64
 from PIL import Image
-import plotly.express as px
 import requests
 
 def validate_member(email):
@@ -19,7 +18,7 @@ email = st.text_input("Enter your email address:")
 if st.button("Validate"):
     response = validate_member(email)
     st.write(response)
-    
+
 # Load the Excel file
 excel_file = 'Student Branch and Member count.xlsx'
 df = pd.read_excel(excel_file)
@@ -174,13 +173,4 @@ if not filtered_df.empty:
             st.markdown(href, unsafe_allow_html=True)
 
         # Line plot using Plotly Express
-st.subheader("Membership Growth over Time")
-fig = px.line(sb_values, x='Apr', y=columns_to_aggregate,title='Membership Growth over Time')
 
-fig.update_layout(
-    title='Membership Growth',
-    xaxis_title='Month',
-    yaxis_title='Membership',
-    yaxis=dict(title_standoff=30)
-)
-st.plotly_chart(fig)
